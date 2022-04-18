@@ -1,0 +1,22 @@
+html, body {
+  background-color: rgb(218, 249, 238);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(9, 7, 7, 0.353);
+  color: white;
+  text-align: center;
+}
+
+/* form {
+  border: solid black 2px;
+  background-color: rgba(190, 210, 236, 0.579);
+  
+} */
