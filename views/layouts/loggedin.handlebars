@@ -29,12 +29,12 @@
   <div id="navbarHome" class="navbar-menu">
     <div class="navbar-start">
       <a class="navbar-item" href="/">Home</a>
-      <a class="navbar-item" href="/loggedin">Dashboard</a>
+      <a class="navbar-item" href="/dashboard">Dashboard</a>
     </div>
 
     <div class="navbar-end">
       <div class="navbar-item">
-        <a class="button is-link" href="/logout"><strong>Logout</strong></a>
+        <a class="button is-link" href="/api/user/logout" type="click" id="logout-button"><strong>Logout</strong></a>
       </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
   </nav>
 
   <br>
-  
+  <p>logged in successful</p>
   <main class="col-auto">
     {{{body}}}
   </main>
@@ -77,3 +77,4 @@
 
 });
 </script>
+<script src="/js/logout.js"></script>

@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const User = require('../../models/user.js');
-const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
   try {
@@ -62,16 +61,10 @@ router.get('/logout', (req, res) => {
   if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).end();
-      
     });
-    
     console.log("You are now logged out!")
-    res.redirect('/')
-    
   } else {
     res.status(404).end();
-    
-    console.log("You are currently not logged in.")
   }
 });
 

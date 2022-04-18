@@ -1,28 +1,29 @@
 <br>
-<form class="mx-6 my-6 py-6" action="">
+<form class="mx-6 my-6 py-6" id="login-form">
   <div class="container is-flex is-flex-direction-column is-align-items-center">
   <div class="" style="font-size: larger;"><strong>
     Log In To Your Account</strong></div>
   <br>
   <div class="field">
-  <label class="label">Username</label>
+  <label class="label" for="username-login">Username</label>
   <div class="control">
-    <input class="input" type="text" size="30" placeholder="Username Here">
+    <input class="input" type="text" name="username-login" id="username-login" size="30" placeholder="Username Here">
   </div>
 </div>
 
 <div class="field">
-  <label class="label">Password</label>
+  <label class="label" for="password-login">Password</label>
   <div class="control">
-    <input class="input" type="text" size="30" placeholder="Username Here">
+    <input class="input" type="text" name="password-login" id="password-login" size="30" placeholder="Password Here">
   </div>
 </div>
 <br>
-<div class="button is-success"><strong>Log In</strong></div>
+<button type="click" class="button is-success" id="login-button"><strong>Log In</strong></button>
 
 <br><br>
 </form>
 
-<a href="/signup">Don't have an account?</a>
+<a href="/signup">Don't have an account yet?</a>
 
 </div>
+
