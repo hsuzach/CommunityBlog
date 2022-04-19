@@ -19,7 +19,7 @@ const signupFormHandler = async function (event) {
   if (response.ok) {
     document.location.replace('/login');
   } else {
-    alert('Failed to sign up');
+    alert('This username has already been taken!');
   }
 
 };

@@ -15,8 +15,12 @@ footer {
   text-align: center;
 }
 
-/* form {
-  border: solid black 2px;
-  background-color: rgba(190, 210, 236, 0.579);
+#post-title{
+  font-size: 18px;
   
-} */
+}
+
+#post-info{
+  display: flex;
+  justify-content: space-between
+}
