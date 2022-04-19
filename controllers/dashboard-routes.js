@@ -12,13 +12,19 @@ router.get('/', withAuth, async (req, res) => {
 
     const posts = postData.map((post) => post.get({ plain: true }));
 
-    res.render('posts', {
+    res.render('dashboard-home', {
       layout: 'loggedin',
       posts,
     });
   } catch (err) {
     res.redirect('login');
   }
+});
+
+router.get('/new', withAuth, (req, res) => {
+  res.render('post-new', {
+    layout: 'loggedin',
+  });
 });
 
 
