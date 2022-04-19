@@ -3,15 +3,15 @@
 <div class="container">
   {{#each posts}}
   <div class="card mx-6">
-    <div class="card-header" id="post-info">
+    <div class="card-header py-1 px-5" id="post-info">
       
-        <a id="post-title" href="/post/{{id}}">{{title}}</a>
+        <a id="post-title" href="/post/{{id}}" style="font-weight: bold">{{title}}</a>
       
       <div>
-        Posted by {{User.username}} on {{format_date createdAt}}
+        Posted by <strong>{{User.username}}</strong> on {{format_date createdAt}}
       </div>
     </div>
-    <div class="card-body">
+    <div class="card-body py-1 px-5">
       {{content}}
     </div>
   </div>

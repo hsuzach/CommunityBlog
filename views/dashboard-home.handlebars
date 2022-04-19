@@ -1,8 +1,24 @@
 
-<div class="dashboard-home is-flex is-flex-direction-column is-align-items-center">
+<div class="dashboard-home container is-flex is-flex-direction-column is-align-items-center">
 <a class="button is-dark" href="/dashboard/new" type="click" id="new-post-get" style="max-width: 400px;"><strong>Create A New Post</strong></a>
 <br>
-
-<container>Existing Posts</container>
-
 </div>
+<div class="container">
+  {{#each posts}}
+  <div class="card mx-6">
+    <div class="card-header py-1 px-5" id="post-info">
+      
+        <a id="post-title" href="/post/{{id}}" style="font-weight: bold">{{title}}</a>
+      
+      <div>
+        Posted on {{format_date createdAt}}
+      </div>
+    </div>
+    <div class="card-body py-1 px-5">
+      {{content}}
+    </div>
+  </div>
+  <br>
+  {{/each}}
+</div>
+
