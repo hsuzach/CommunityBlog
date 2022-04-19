@@ -17,7 +17,7 @@ const signupFormHandler = async function (event) {
   });
 
   if (response.ok) {
-    document.location.replace('/login');
+    document.location.replace('/dashboard');
   } else {
     alert('This username has already been taken!');
   }

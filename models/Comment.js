@@ -8,10 +8,26 @@ Comment.init(
     body: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    userId: {
+      type: DataTypes.NUMBER,
+      references: {
+        model: "User",
+        key: "id"
+      }
+    },
+    postId: {type: DataTypes.NUMBER,
+      references: {
+        model: "Post",
+        key: "id"
+      }
     }
   },
   {
-    sequelize
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Comment'
   }
 );
 

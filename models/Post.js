@@ -6,10 +6,20 @@ class Post extends Model {}
 Post.init(
   {
     title: DataTypes.STRING,
-    content: DataTypes.STRING
+    content: DataTypes.STRING,
+    userId: {
+      type: DataTypes.NUMBER,
+      references: {
+        model: 'User',
+        key: "id"
+      }
+    }
   },
   {
-    sequelize
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: 'Post'
   }
 );
 
