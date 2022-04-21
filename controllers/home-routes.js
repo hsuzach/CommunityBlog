@@ -48,8 +48,8 @@ router.get('/post/:id', async (req, res) => {
 
       if (postData) {
         const post = postData.get({ plain: true });
-
-        res.render('post-single', { post, layout: "loggedin" });
+        console.log(post)
+        res.render('post-single-loggedin', { post, layout: "loggedin" });
       } else {
         res.status(404).end();
       }
@@ -75,12 +75,11 @@ router.get('/post/:id', async (req, res) => {
       } else {
         res.status(404).end();
       }
-  } catch (err) {
-    res.status(500).json(err);
-  }
+    } catch (err) {
+      res.status(500).json(err);
+    }
   }
 
-  
 });
 
 router.get('/signup', (req, res) => {

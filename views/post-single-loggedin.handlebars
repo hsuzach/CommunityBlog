@@ -47,11 +47,22 @@
     <div class="card-body py-1 px-5">
       <br>
 
-      <p>Sign In or Log In to leave a response!</p>
+      <form action="">
+
+        <input type="hidden" name="post-id" value="{{post.id}}" />
+        <div class="field">
+        <div class="control">
+          <textarea class="textarea" name="new-comment-body" id="new-comment-body" cols="50" rows="3" placeholder="Ex: Coding is Great!"></textarea>
+        </div>
+      </div>
+      
+      <button type="click" class="button is-dark" id="new-comment-submit"><strong>Submit Comment</strong></button>
+
+      </form>
       <br>
     </div>
   </div>
   <br>
 </div>
 
-
+<script src="/js/new-comment.js"></script>

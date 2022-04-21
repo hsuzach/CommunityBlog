@@ -1,5 +1,13 @@
-<div>testing all posts</div>
+<br>
+<div class="container py-3 mx-6" style="text-align: center; border: solid 2px black; background-color: grey; color: white; border-radius: 20px" >
+  <p style="font-size: 20px; font-weight: bold;">Welcome to Zach Hsu's Community Tech Blog!</p>
+  <br>
+  <p style="font-style: italic;">Share your thoughts on tech, coding, and more!</p>
+</div>
+<br>
 
+
+{{#if posts}}
 <div class="container">
   {{#each posts}}
   <div class="card mx-6">
@@ -18,3 +26,9 @@
   <br>
   {{/each}}
 </div>
+{{else}}
+  <br><br><br>
+  <h2 style="position: relative; text-align: center">
+    <strong>Be the first to leave a post!</strong>
+  </h2>
+{{/if}}

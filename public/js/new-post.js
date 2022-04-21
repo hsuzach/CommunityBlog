@@ -4,17 +4,22 @@ const newFormHandler = async function(event) {
   const title = document.querySelector('input[name="new-post-title"]').value;
   const content = document.querySelector('textarea[name="new-post-content"]').value;
 
-  await fetch(`/api/post`, {
-    method: 'POST',
-    credentials: 'include',
-    body: JSON.stringify({
-      title,
-      content,
-    }),
-    headers: { 'Content-Type': 'application/json' },
-  });
+  if (title && content) {
+    await fetch(`/api/post`, {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({
+        title,
+        content,
+      }),
+      headers: { 'Content-Type': 'application/json' },
+    });
 
   document.location.replace('/dashboard');
+  
+  } else {
+    alert("Please fill out both sections for your post!")
+  }
 };
 
 document

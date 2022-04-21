@@ -3,6 +3,8 @@
 <a class="button is-dark" href="/dashboard/new" type="click" id="new-post-get" style="max-width: 400px;"><strong>Create A New Post</strong></a>
 <br>
 </div>
+
+{{#if posts}}
 <div class="container">
   {{#each posts}}
   <div class="card mx-6">
@@ -21,4 +23,12 @@
   <br>
   {{/each}}
 </div>
+{{else}}
+
+<br><br><br>
+  <h2 style="position: relative; text-align: center">
+    <strong>You do not have any posts yet! Get started by creating a post above!</strong>
+  </h2>
+
+{{/if}}
 
