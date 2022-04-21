@@ -1,0 +1,36 @@
+<div class="card is-flex is-flex-direction-column is-align-items-center" >
+  <div class="card-content" >
+    <div class="content">
+      <form class="container is-flex is-flex-direction-column is-align-items-center" id="edit-post-form">
+        <br>
+        <p><strong>Update or Delete Your Post</strong></p>
+        <input type="hidden" name="post-id" value="{{post.id}}" />
+        
+        <br>
+        <div class="field">
+        <label class="label" for="edit-post-title">Edit Your Title:</label>
+        <div class="control">
+          <input class="input" type="text" name="edit-post-title" id="edit-post-title" size="48" value="{{post.title}}">
+        </div>
+      </div>
+      <hr>
+      <div class="field">
+        <label class="label" for="edit-post-content">Edit Your Content:</label>
+        <div class="control">
+          <textarea class="textarea" name="edit-post-content" id="edit-post-content" cols="50" rows="6">{{post.content}}</textarea>
+        </div>
+      </div>
+      <br>
+      <container>
+        <button type="click" class="button is-dark" id="edit-post-button"><strong>Update Post</strong></button>
+        <button type="click" class="button is-danger" id="delete-post-button"><strong>Delete Post</strong></button>
+      </container>
+      
+
+      <br><br>
+    </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/edit-post.js"></script>
