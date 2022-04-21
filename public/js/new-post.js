@@ -1,3 +1,6 @@
+//accepts user post values and posts to database
+//check to see if both inputs are provided
+
 const newFormHandler = async function(event) {
   event.preventDefault();
 

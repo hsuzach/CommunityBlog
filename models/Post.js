@@ -3,6 +3,9 @@ const sequelize = require('../config/connection.js');
 
 class Post extends Model {}
 
+//creates Post model with sequelize
+//associated with User by userId
+
 Post.init(
   {
     title: DataTypes.STRING,

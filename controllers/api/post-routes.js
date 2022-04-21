@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Post = require('../../models/post.js');
 const withAuth = require('../../utils/auth');
 
+//post for new post with associated userId
 router.post('/', withAuth, async (req, res) => {
   const body = req.body;
   
@@ -14,6 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+//update post route at postId
 router.put('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = await Post.update(req.body, {
@@ -32,6 +34,7 @@ router.put('/:id', withAuth, async (req, res) => {
   }
 });
 
+//delete post route at postId
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const [affectedRows] = Post.destroy({

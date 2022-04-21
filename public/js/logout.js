@@ -1,3 +1,5 @@
+//destroys session and takes user to home page
+
 const logout = async function () {
   const response = await fetch('/api/user/logout', {
     method: 'GET',

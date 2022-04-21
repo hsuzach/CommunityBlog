@@ -2,6 +2,8 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
+//declares model associations and exports
+
 Post.belongsTo(User, {
   foreignKey: 'user_id',
   onDelete: 'CASCADE'

@@ -1,3 +1,6 @@
+//creates a user with given credentials
+//checks if username is unique
+
 const signupFormHandler = async function (event) {
   event.preventDefault();
 

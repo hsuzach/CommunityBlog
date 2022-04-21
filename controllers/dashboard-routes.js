@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Post } = require('../models/');
 const withAuth = require('../utils/auth');
 
+//render user's posts
 router.get('/', withAuth, async (req, res) => {
   try {
     const postData = await Post.findAll({
@@ -21,12 +22,14 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
+//render creating a new post form
 router.get('/new', withAuth, (req, res) => {
   res.render('post-new', {
     layout: 'loggedin',
   });
 });
 
+//render editing or deleting post form
 router.get('/edit/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id);

@@ -3,6 +3,9 @@ const sequelize = require('../config/connection.js');
 
 class Comment extends Model {}
 
+//creates Comment model with sequelize
+//associated with User by userId and Post by postId
+
 Comment.init(
   {
     body: {

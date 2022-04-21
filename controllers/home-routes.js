@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Post, Comment, User } = require('../models/');
 
+//renders home page with SignUp/LogIn buttons or LogOut button depending on session loggedIn status
 router.get('/', async (req, res) => {
   
   //if user is loggedin, display the loggedin layout to show logout button
@@ -33,6 +34,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//render single post and associated comments
 router.get('/post/:id', async (req, res) => {
   if (req.session.loggedIn) {
     try {
@@ -82,12 +84,14 @@ router.get('/post/:id', async (req, res) => {
 
 });
 
+//render signup page
 router.get('/signup', (req, res) => {
  
   res.render('signup', { layout: 'main' });
  
 });
 
+//render login page
 router.get('/login', (req, res) => {
 
   res.render('login', { layout: 'main' });

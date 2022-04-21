@@ -1,3 +1,5 @@
+//user provides credentials to login
+
 const loginFormHandler = async function(event) {
   event.preventDefault();
 

@@ -1,3 +1,5 @@
+//accepts user's comment and posts to database
+
 const commentFormHandler = async function(event) {
   event.preventDefault();
 
