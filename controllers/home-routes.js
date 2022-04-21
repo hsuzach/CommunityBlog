@@ -33,21 +33,63 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/signup', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
+router.get('/post/:id', async (req, res) => {
+  if (req.session.loggedIn) {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          User,
+          {
+            model: Comment,
+            include: [User],
+          },
+        ],
+      });
 
+      if (postData) {
+        const post = postData.get({ plain: true });
+
+        res.render('post-single', { post, layout: "loggedin" });
+      } else {
+        res.status(404).end();
+      }
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  } else {
+    try {
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          User,
+          {
+            model: Comment,
+            include: [User],
+          },
+        ],
+      });
+
+      if (postData) {
+        const post = postData.get({ plain: true });
+
+        res.render('post-single', { post, layout: "main" });
+      } else {
+        res.status(404).end();
+      }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  }
+
+  
+});
+
+router.get('/signup', (req, res) => {
+ 
   res.render('signup', { layout: 'main' });
  
 });
 
 router.get('/login', (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect('/');
-  //   return;
-  // }
 
   res.render('login', { layout: 'main' });
  
