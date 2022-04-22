@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Post = require('../../models/temppost.js');
+const Post = require('../../models/post.js');
 const withAuth = require('../../utils/auth');
 
 //post for new post with associated userId
