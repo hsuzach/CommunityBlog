@@ -1,6 +1,6 @@
-const User = require('./user');
-const Post = require('./post');
-const Comment = require('./comment');
+const User = require('./tempuser');
+const Post = require('./temppost');
+const Comment = require('./tempcomment');
 
 //declares model associations and exports
 
